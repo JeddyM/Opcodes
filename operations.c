@@ -98,3 +98,20 @@ void pint(stack_t **stk, unsigned int line_number)
 	else
 		fprintf(stdout, "%d\n", (*stk)->n);
 }
+void swap(stack_t **stk, unsigned int line_number)
+{
+	int temp;
+
+	if (stk == NULL || *stk == NULL || (*stk)->next == NULL)
+	{
+		line_number++;
+		fprintf(stderr, "L%d: can't swap, stack too short\n",
+			line_number);
+		free_stk(stk, line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*stk)->n;
+	(*stk)->n = (*stk)->next->n;
+	(*stk)->next->n = temp;
+}
+
