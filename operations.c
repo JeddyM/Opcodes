@@ -19,3 +19,37 @@ void pall(stack_t **stack, unsigned int line_num)
 	}
 }
 
+/**
+ * push - adds to the top of the stack
+ * @stk: the top of stack
+ * @line_number: the token line number
+ *
+ * Return: void
+ */
+void push(stack_t **stk, unsigned int line_number)
+{
+	stack_t *new;
+
+	if (stk == NULL)
+	{
+		fprintf(stderr, "L%d: unknown stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	new = malloc(sizeof(stack_t));
+
+	if (new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_stk(stk, line_number);
+		exit(EXIT_FAILURE);
+	}
+	new->n = variables.temp;
+	new->prev = NULL;
+	new->next = *stk;
+
+	if (*stk != NULL)
+		(*stk)->prev = new;
+	*stk = new;
+}
+
