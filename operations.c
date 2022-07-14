@@ -52,4 +52,31 @@ void push(stack_t **stk, unsigned int line_number)
 		(*stk)->prev = new;
 	*stk = new;
 }
-
+/**
+ * pop - function to remove the top of the stack
+ * @stk: the top of the stack
+ * @line_number: line number
+ *
+ * Return: void
+ */
+void pop(stack_t **stk, unsigned int line_number)
+{
+	if (stk == NULL || *stk == NULL)
+	{
+		line_number++;
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stk)->next != NULL)
+	{
+		*stk = (*stk)->next;
+		variables.temp = (*stk)->n;
+		free((*stk)->prev);
+		(*stk)->prev = NULL;
+	}
+	else
+	{
+		free(*stk);
+		*stk = NULL;
+	}
+}

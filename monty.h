@@ -39,8 +39,24 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct var - temporarily variable and checker
+ * @temp: temporarily variable
+ * @check: check variable
+ *
+ * Description: store temp variable an check
+ */
+typedef struct var
+{
+	int temp;
+	char check;
+} var_t;
+
+extern var_t variables;
 
 
 void pall(stack_t **stack, unsigned int line_num);
 void push(stack_t **stk, unsigned int line_number);
+void pop(stack_t **stk, unsigned int line_number);
+void free_stk(stack_t **stk, unsigned int line_number);
 #endif
