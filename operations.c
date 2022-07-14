@@ -80,3 +80,21 @@ void pop(stack_t **stk, unsigned int line_number)
 		*stk = NULL;
 	}
 }
+
+/**
+ * pint - function prints the value at the top of the stack
+ * @stk: stack
+ * @line_number: line number
+ * Return: void
+ */
+void pint(stack_t **stk, unsigned int line_number)
+{
+	if (*stk == NULL)
+	{
+		line_number++;
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+		fprintf(stdout, "%d\n", (*stk)->n);
+}

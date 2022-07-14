@@ -59,6 +59,7 @@ void pall(stack_t **stack, unsigned int line_num);
 void push(stack_t **stk, unsigned int line_number);
 void pop(stack_t **stk, unsigned int line_number);
 void free_stk(stack_t **stk, unsigned int line_number);
+void pint(stack_t **stk, unsigned int line_number);
 
 int main(int argc, char *argv[]);
 void tokenizer(char *input, stack_t **stk, unsigned int line_number);
