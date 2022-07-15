@@ -2,8 +2,8 @@
 
 /**
  * pall - Print all values on the stack
- * @stack: pointer to head of stack
- * @line_num: file's line number
+ * @stk: pointer to head of stack
+ * @line_number: file's line number
  * Return: Void
  */
 
@@ -99,6 +99,12 @@ void pint(stack_t **stk, unsigned int line_number)
 	else
 		fprintf(stdout, "%d\n", (*stk)->n);
 }
+/**
+ * swap - swapping first two elements on top of stack
+ * @stk: stack
+ * @line_number: line number
+ * Return: void
+ */
 void swap(stack_t **stk, unsigned int line_number)
 {
 	int temp;
@@ -114,19 +120,4 @@ void swap(stack_t **stk, unsigned int line_number)
 	temp = (*stk)->n;
 	(*stk)->n = (*stk)->next->n;
 	(*stk)->next->n = temp;
-}
-
-/**
- * _nop - function that does nothing.
- * @stk: pointer to top of stack
- * @line_number: total line number count
- *
- * Description: no operations
- * Return: na
- */
-void _nop(stack_t **stk, unsigned int line_number)
-{
-	(void)stk;
-	(void)line_number;
-	;
 }
