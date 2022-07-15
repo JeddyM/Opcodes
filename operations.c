@@ -7,15 +7,16 @@
  * Return: Void
  */
 
-void pall(stack_t **stack, unsigned int line_num)
+void pall(stack_t **stk, unsigned int line_number)
 {
-	stack_t *h = *stack;
-	(void)line_num;
+	stack_t *print;
+	(void)line_number;
 
-	while (h)
+	print = *stk;
+	while (print != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", print->n);
+		print = print->next;
 	}
 }
 
@@ -115,3 +116,17 @@ void swap(stack_t **stk, unsigned int line_number)
 	(*stk)->next->n = temp;
 }
 
+/**
+ * _nop - function that does nothing.
+ * @stk: pointer to top of stack
+ * @line_number: total line number count
+ *
+ * Description: no operations
+ * Return: na
+ */
+void _nop(stack_t **stk, unsigned int line_number)
+{
+	(void)stk;
+	(void)line_number;
+	;
+}
