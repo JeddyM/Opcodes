@@ -73,4 +73,8 @@ int is_num(char *token);
 
 /*CALCULATION PROTOTYPES*/
 void add(stack_t **stk, unsigned int line_number);
+void sub(stack_t **stk, unsigned int line_number);
+void _div(stack_t **stk, unsigned int line_number);
+void _mul(stack_t **stk, unsigned int line_number);
+void _mod(stack_t **stk, unsigned int line_number);
 #endif
