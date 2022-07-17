@@ -24,6 +24,10 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+<<<<<<< HEAD
+=======
+		{"pchar", pchar},
+>>>>>>> parent of 60eb040... Fixing errors
 		{NULL, NULL}
 	};
 
