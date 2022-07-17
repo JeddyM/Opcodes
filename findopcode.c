@@ -19,15 +19,22 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-		{"nop", _nop},
 		{"sub", sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"nop", _nop},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{"mod", _mod},
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		{"pchar", pchar},
 >>>>>>> parent of 60eb040... Fixing errors
+=======
+		{"rotl", rotl},
+		{"rotr", rotr},
+>>>>>>> 60eb040f285eb64af805e01e803efb1b5244c501
 		{NULL, NULL}
 	};
 
