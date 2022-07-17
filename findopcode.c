@@ -28,7 +28,6 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		{"mod", _mod},
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 		{"pchar", pchar},
 >>>>>>> parent of 60eb040... Fixing errors
@@ -36,8 +35,6 @@ void findOps(char *token, stack_t **stk, unsigned int line_number)
 		{"rotl", rotl},
 		{"rotr", rotr},
 >>>>>>> 60eb040f285eb64af805e01e803efb1b5244c501
-=======
->>>>>>> parent of 4c14d99... Removing files
 		{NULL, NULL}
 	};
 
